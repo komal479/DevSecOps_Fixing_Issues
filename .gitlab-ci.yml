@@ -2,6 +2,7 @@ stages:
     - runSASTScanUsingSonarCloud
     - runSCAScanUsingSnyk
     - runDASTScanUsingZAP
+    -test
 
 run-sast-job:
     stage: runSASTScanUsingSonarCloud
@@ -31,4 +32,8 @@ run-dast-job:
     artifacts:
       paths:
         - zap_report.html
-  
+
+test_job:
+stage: test
+script:
+- echo "test job"  
